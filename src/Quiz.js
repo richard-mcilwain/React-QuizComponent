@@ -15,7 +15,7 @@ class Quiz extends Component {
     const isQuizEnd =
       this.state.quiz_position - 1 === quizData.quiz_questions.length;
     if (isQuizEnd) {
-      return <QuizEnd />;
+      return <QuizEnd resetClickHandler={this.resetClickHandler.bind(this)} />;
     } else {
       return (
         <QuizQuestion
@@ -30,6 +30,10 @@ class Quiz extends Component {
     this.setState({
       quiz_position: this.state.quiz_position + 1,
     });
+  }
+
+  resetClickHandler() {
+    this.setState({ quiz_position: 1 });
   }
 }
 
