@@ -10,11 +10,11 @@ class QuizQuestion extends Component {
 
   render() {
     const answerOptions = this.props.quiz_question.answer_options.map(
-      (option, index) => {
+      (answer_option, index) => {
         return (
           <QuizQuestionButton
             key={index}
-            button_text={option}
+            button_text={answer_option}
             clickHandler={this.handleClick.bind(this)}
           >
             option
