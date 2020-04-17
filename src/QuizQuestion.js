@@ -16,9 +16,7 @@ class QuizQuestion extends Component {
             key={index}
             button_text={answer_option}
             clickHandler={this.handleClick.bind(this)}
-          >
-            option
-          </QuizQuestionButton>
+          />
         );
       }
     );
