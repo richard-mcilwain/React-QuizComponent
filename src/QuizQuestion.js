@@ -5,7 +5,7 @@ class QuizQuestion extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { incorrect_answer: false };
+    this.state = { incorrectAnswer: false };
   }
 
   render() {
@@ -28,7 +28,7 @@ class QuizQuestion extends Component {
         <section className="buttons">
           <ul>{answerOptions}</ul>
         </section>
-        {this.state.incorrect_answer === true ? (
+        {this.state.incorrectAnswer === true ? (
           <p className="error">Sorry, that's not right.</p>
         ) : null}
       </main>
@@ -37,10 +37,10 @@ class QuizQuestion extends Component {
 
   handleClick(buttonText) {
     if (buttonText === this.props.quiz_question.answer) {
-      this.setState({ incorrect_answer: false });
+      this.setState({ incorrectAnswer: false });
       this.props.showNextQuestionHandler();
     } else {
-      this.setState({ incorrect_answer: true });
+      this.setState({ incorrectAnswer: true });
     }
   }
 }
